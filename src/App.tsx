@@ -33,11 +33,11 @@ function App() {
 
   const createCard = async (e: React.FormEvent<HTMLFormElement>) => {};
 
-  const updateCardLike = async (id: string) => {};
+  const getCards = async () => {};
+
+  const updateCard = async (id: string) => {};
 
   const deleteCard = async (id: string) => {};
-
-  useEffect(() => {}, []);
 
   return (
     <>
@@ -63,10 +63,7 @@ function App() {
             <li key={card.id} className="card">
               <img src={card.photo} alt={card.title} />
               <p className="card__title">{card.title}</p>
-              <button
-                onClick={() => updateCardLike(card.id)}
-                className="btn--like"
-              >
+              <button onClick={() => updateCard(card.id)} className="btn--like">
                 {card.like ? "🤍" : "🩷"}
               </button>
               <p>{card.description}</p>

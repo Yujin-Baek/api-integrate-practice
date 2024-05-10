@@ -12,6 +12,14 @@ export const handlers = [
       return HttpResponse.json("Missing document", { status: 400 });
     }
 
+    console.log({
+      id: `${cards.length}`,
+      title: title,
+      description: description,
+      photo: URL.createObjectURL(file),
+      like: false,
+    });
+
     cards.push({
       id: `${cards.length + 1}`,
       title: title,
@@ -40,7 +48,7 @@ export const handlers = [
     });
   }),
 
-  http.put("/api/cards/:id/like", ({ params }) => {
+  http.put("/api/cards/:id", ({ params }) => {
     const { id } = params;
     const index = cards.findIndex((data) => data.id === id);
     if (index === -1) {
