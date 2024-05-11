@@ -31,11 +31,7 @@ function App() {
     }
   };
 
-  const createCard = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const response = axios.get("/api/cards", requestData);
-  };
+  const createCard = () => {};
 
   const getCards = () => {};
 
