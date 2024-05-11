@@ -5,7 +5,7 @@ export type Card = {
   id: string;
   title: string;
   description: string;
-  photo: string;
+  photo?: string;
   like: boolean;
 };
 

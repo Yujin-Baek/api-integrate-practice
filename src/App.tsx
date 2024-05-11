@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { FormHTMLAttributes, useEffect, useState } from "react";
 import { Card } from "./mocks/mockData";
 import axios from "axios";
 
 type Input = {
   title: string;
   description: string;
-  photo: File | null;
+  photo?: File;
 };
 
 function App() {
@@ -31,13 +31,17 @@ function App() {
     }
   };
 
-  const createCard = async (e: React.FormEvent<HTMLFormElement>) => {};
+  const createCard = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-  const getCards = async () => {};
+    const response = axios.get("/api/cards", requestData);
+  };
 
-  const updateCard = async (id: string) => {};
+  const getCards = () => {};
 
-  const deleteCard = async (id: string) => {};
+  const updateCard = () => {};
+
+  const deleteCard = () => {};
 
   return (
     <>

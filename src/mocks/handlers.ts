@@ -44,7 +44,7 @@ export const handlers = [
 
   http.get("/api/cards", async () => {
     return HttpResponse.json(cards, {
-      status: 200,
+      status: 201,
     });
   }),
 
